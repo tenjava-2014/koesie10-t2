@@ -5,7 +5,10 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class CommandManager implements CommandExecutor {
     private Map<String, SubCommand> subCommands;
@@ -29,9 +32,13 @@ public class CommandManager implements CommandExecutor {
         if (args.length > 0) {
             if (subCommands.containsKey(args[0])) {
                 SubCommand subCommand = subCommands.get(args[0]);
-                List<String> subCommandArgs = new ArrayList<>(args.length-1);
+                List<String> subCommandArgs = new ArrayList<>(args.length - 1);
                 for (int i = 0; i < args.length; i++) {
                     if (i != 0) subCommandArgs.add(args[i]);
+                }
+                if (!commandSender.hasPermission(subCommand.getPermission())) {
+                    commandSender.sendMessage(ChatColor.RED + "You don't have the permission to do this: " + subCommand.getPermission());
+                    return true;
                 }
                 subCommand.handleCommand(commandSender, subCommandArgs);
                 return true;

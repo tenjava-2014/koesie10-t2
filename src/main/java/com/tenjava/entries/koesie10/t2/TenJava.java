@@ -2,7 +2,8 @@ package com.tenjava.entries.koesie10.t2;
 
 import com.tenjava.entries.koesie10.t2.api.GameModeManager;
 import com.tenjava.entries.koesie10.t2.commands.CommandManager;
-import com.tenjava.entries.koesie10.t2.commands.GameModeInfoCommand;
+import com.tenjava.entries.koesie10.t2.commands.InfoCommand;
+import com.tenjava.entries.koesie10.t2.commands.StartCommand;
 import com.tenjava.entries.koesie10.t2.ctf.CaptureTheFlagGameMode;
 import com.tenjava.entries.koesie10.t2.listeners.PlayerListener;
 import org.bukkit.Bukkit;
@@ -17,13 +18,11 @@ public class TenJava extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new PlayerListener(this), this);
 
         gameModeManager = new GameModeManager(this);
-        commandManager = new CommandManager(this);
-
         registerGameModes();
 
+        commandManager = new CommandManager(this);
         getCommand("minigames").setExecutor(commandManager);
-
-        commandManager.registerSubCommand(new GameModeInfoCommand(this));
+        registerSubCommands();
     }
 
     public GameModeManager getGameModeManager() {
@@ -36,5 +35,10 @@ public class TenJava extends JavaPlugin {
 
     public void registerGameModes() {
         gameModeManager.addGameMode(new CaptureTheFlagGameMode());
+    }
+
+    public void registerSubCommands() {
+        commandManager.registerSubCommand(new InfoCommand(this));
+        commandManager.registerSubCommand(new StartCommand(this));
     }
 }

@@ -21,8 +21,9 @@ public interface SubCommand {
 
     /**
      * Handles the command
+     *
      * @param sender Source of the command
-     * @param args Passed command arguments
+     * @param args   Passed command arguments
      */
     public void handleCommand(CommandSender sender, List<String> args);
 }

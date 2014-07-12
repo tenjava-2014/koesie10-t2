@@ -7,8 +7,8 @@ import org.bukkit.command.CommandSender;
 
 import java.util.List;
 
-public class GameModeInfoCommand extends AbstractSubCommand {
-    public GameModeInfoCommand(TenJava plugin) {
+public class InfoCommand extends AbstractSubCommand {
+    public InfoCommand(TenJava plugin) {
         super(plugin);
     }
 
