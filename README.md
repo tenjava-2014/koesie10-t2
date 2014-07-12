@@ -1,6 +1,8 @@
 koesie10's ten.java submission
 ==============================
 
+**I've chosen spent too much time on an idea I would never have been able to finish at the start, then I started another one which I also won't be able to finish. Therefore, this idea will not be finished. (And also because I still want to play some games like Battlefield 4)**
+
 [![ten.java](https://cdn.mediacru.sh/hu4CJqRD7AiB.svg)](https://tenjava.com/)
 
 This is a submission for the 2014 ten.java contest.
