@@ -32,3 +32,7 @@ Usage
 
 1. Install plugin
 2. Do things with it
+
+Plan
+----
+Create a Capture the Flag plugin and if I have time create an API for external plugins to use to add other minigame modes.
