@@ -2,3 +2,8 @@ name: koesie10-t2
 main: com.tenjava.entries.koesie10.t2.TenJava
 version: '${project.version}'
 author: koesie10
+commands:
+   minigames:
+      description: Main command for koesie10-t2
+      usage: /<command>
+      aliases: [mg, game]
