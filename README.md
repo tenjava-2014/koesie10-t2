@@ -35,4 +35,4 @@ Usage
 
 Plan
 ----
-Create a Capture the Flag plugin.
+Create a gamemode similar to Garry's Mod Murder.

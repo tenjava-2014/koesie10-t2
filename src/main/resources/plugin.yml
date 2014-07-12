@@ -3,19 +3,15 @@ main: com.tenjava.entries.koesie10.t2.TenJava
 version: '${project.version}'
 author: koesie10
 commands:
-   minigames:
+   murder:
       description: Main command for koesie10-t2
       usage: /<command>
-      aliases: [mg, game, ctf]
+      aliases: [m]
 permissions:
-    minigames.*:
+    murder.*:
         description: Gives access to all koesie10-t2 commands
         children:
-            minigames.info: true
             minigames.start: true
-    minigames.info:
-        description: Allows you to view the info of a gamemode
-        default: true
-    minigames.start:
-        description: Allows you to start a new gamemode
+    murder.start:
+        description: Allows you to start a new game
         default: op

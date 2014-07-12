@@ -1,7 +1,10 @@
 package com.tenjava.entries.koesie10.t2.commands;
 
 import com.tenjava.entries.koesie10.t2.TenJava;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 
 import java.util.List;
 
@@ -22,21 +25,25 @@ public class StartCommand extends AbstractSubCommand {
 
     @Override
     public String getUsage() {
-        return "<gamemode> <arena>";
+        return "";
     }
 
     @Override
     public String getDescription() {
-        return "Starts a new game with the supplied gamemode and arena.";
+        return "Starts a new game.";
     }
 
     @Override
     public String getPermission() {
-        return "minigames.start";
+        return "murder.start";
     }
 
     @Override
     public void handleCommand(CommandSender sender, List<String> args) {
-        plugin.getGameManager().gameInProgress = true;
+        if (Bukkit.getOnlinePlayers().length < 2) {
+            sender.sendMessage(ChatColor.RED + "You need at least 2 players!");
+            return;
+        }
+        plugin.getGameManager().start();
     }
 }

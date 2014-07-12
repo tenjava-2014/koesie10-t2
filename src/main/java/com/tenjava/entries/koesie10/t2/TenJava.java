@@ -1,8 +1,6 @@
 package com.tenjava.entries.koesie10.t2;
 
 import com.tenjava.entries.koesie10.t2.commands.CommandManager;
-import com.tenjava.entries.koesie10.t2.commands.InfoCommand;
-import com.tenjava.entries.koesie10.t2.commands.SetCommand;
 import com.tenjava.entries.koesie10.t2.commands.StartCommand;
 import com.tenjava.entries.koesie10.t2.listeners.PlayerListener;
 import org.bukkit.Bukkit;
@@ -17,7 +15,7 @@ public class TenJava extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new PlayerListener(this), this);
 
         commandManager = new CommandManager(this);
-        getCommand("minigames").setExecutor(commandManager);
+        getCommand("murder").setExecutor(commandManager);
         registerSubCommands();
 
         gameManager = new GameManager(this);
@@ -28,8 +26,6 @@ public class TenJava extends JavaPlugin {
     }
 
     public void registerSubCommands() {
-        commandManager.registerSubCommand(new InfoCommand(this));
         commandManager.registerSubCommand(new StartCommand(this));
-        commandManager.registerSubCommand(new SetCommand(this));
     }
 }
