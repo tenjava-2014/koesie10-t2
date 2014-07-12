@@ -1,0 +1,32 @@
+apply plugin: 'java'
+
+ext {
+    bukkitVersion = '1.7.9-R0.2-SNAPSHOT'
+}
+
+version = '0.0.1-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+jar {
+    archiveName = 'koesie10-t2.jar'
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'http://repo.bukkit.org/content/groups/public/'
+    }
+}
+
+dependencies {
+    compile "org.bukkit:bukkit:${bukkitVersion}"
+    testCompile 'junit:junit:4.11'
+}
+
+def engine = new groovy.text.GStringTemplateEngine()
+
+processResources {
+    filter { engine.createTemplate(it).make([project: project]).toString() }
+}
