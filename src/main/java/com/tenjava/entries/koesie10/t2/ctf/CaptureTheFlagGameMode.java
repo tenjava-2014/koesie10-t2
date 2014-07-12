@@ -6,11 +6,16 @@ import org.bukkit.Location;
 public class CaptureTheFlagGameMode implements GameMode {
     @Override
     public void createField(Location startLocation) {
-        
+
     }
 
     @Override
     public String getName() {
+        return "ctf";
+    }
+
+    @Override
+    public String getDisplayName() {
         return "Capture The Flag";
     }
 
