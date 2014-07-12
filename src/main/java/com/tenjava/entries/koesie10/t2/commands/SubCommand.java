@@ -15,6 +15,11 @@ public interface SubCommand {
     public String getUsage();
 
     /**
+     * @return Description of the sub command.
+     */
+    public String getDescription();
+
+    /**
      * @return Needed permission for command or null if everyone can execute this.
      */
     public String getPermission();

@@ -35,4 +35,4 @@ Usage
 
 Plan
 ----
-Create a Capture the Flag plugin and if I have time create an API for external plugins to use to add other minigame modes.
+Create a Capture the Flag plugin.

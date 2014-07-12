@@ -6,7 +6,7 @@ commands:
    minigames:
       description: Main command for koesie10-t2
       usage: /<command>
-      aliases: [mg, game]
+      aliases: [mg, game, ctf]
 permissions:
     minigames.*:
         description: Gives access to all koesie10-t2 commands

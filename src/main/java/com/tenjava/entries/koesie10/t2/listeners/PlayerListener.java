@@ -15,11 +15,6 @@ public class PlayerListener implements Listener {
 
     @EventHandler
     public void onPlayerJoin(final PlayerJoinEvent e) {
-        Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
-            @Override
-            public void run() {
-                e.getPlayer().sendMessage("Welcome to this minigame server!");
-            }
-        }, 10);
+        Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, () -> e.getPlayer().sendMessage("Welcome to CTF!"), 10);
     }
 }
